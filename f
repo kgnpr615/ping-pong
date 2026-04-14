@@ -25,10 +25,13 @@ class Player(GameSprite):
         if keys[K_W] and self.rect.y > 5:
             self.rect.y -= self.speed
         if keys[K_S] and self.rect.y < 5:
-            self.rect.x += self.speed
-    def fire(self):
-        bullet = Bullet(bullett, self.rect.centerx, self.rect.top, 1, 1, -15)
-        bullets.add(bullet)
+            self.rect.y += self.speed
+    def update_r(self):
+        keys = key.get_pressed()
+        if keys[K_W] and self.rect.y > 5:
+            self.rect.y -= self.speed
+        if keys[K_S] and self.rect.y < 5:
+            self.rect.y += self.speed 
 
 
 finish = False
