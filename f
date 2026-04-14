@@ -33,6 +33,10 @@ class Player(GameSprite):
         if keys[K_S] and self.rect.y < 5:
             self.rect.y += self.speed 
 
+pram = 'скрин.jpg'
+
+ship = Player(pram, 5, 50, 100, 100, 10)
+ship1 = Player(pram, 5, 200, 100, 100, 10)
 
 finish = False
 run = True
