@@ -1,4 +1,5 @@
 from pygame import *
+from pygame.locals import *
 init()
 
 display.set_caption('front')
@@ -40,8 +41,8 @@ class Player(GameSprite):
 
 class Area():
     def __init__(self, x=0, y=0, width=10, height=10, color=None):
-        self.rect = pygame.Rect(x, y, width, height)
-        self.fill_color = back 
+        self.rect = Rect(x, y, width, height)
+        self.fill_color = color if color else(255, 255, 255)
         if color:
             self.fill_color = color
     def color(self, new_color):
@@ -55,7 +56,7 @@ class Area():
 class Picture(Area):
     def __init__(self, file_name, x=0, y=0, width=10, height=10):
         Area.__init__(self, x=x, y=y, width=width, height=height, color=None)
-        self.image = pygame.image.load(file_name)
+        self.image = image.load(file_name)
 
 pram = 'скрин.jpg'
 
@@ -77,5 +78,6 @@ while run:
         ship1.update_r()
         ship.reset()
         ship1.reset()
-        display.update()
-        clock.tick(60)
+    display.update()
+    clock.tick(60)
+        
